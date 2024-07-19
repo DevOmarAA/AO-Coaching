@@ -153,16 +153,27 @@ footer p {
     margin: 0;
 }
 
+/* Instagram button styles */
 .instagram-button {
-    background-color: #E4405F;
-    color: white;
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    background: #25d366;
+    color: #fff;
     border: none;
-    padding: 10px 20px;
-    font-size: 16px;
+    border-radius: 50%;
+    padding: 15px;
+    font-size: 24px;
     cursor: pointer;
-    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+    z-index: 1000; /* Ensure it stays above other content */
 }
 
+.instagram-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
 
 /* Calculator section styles */
 .calculator-section {
