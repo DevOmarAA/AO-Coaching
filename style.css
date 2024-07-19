@@ -154,7 +154,7 @@ footer p {
 }
 
 /* WhatsApp button styles */
-.inst-button{
+.instagram-button {
     position: fixed;
     bottom: 15px;
     right: 15px;
@@ -170,7 +170,7 @@ footer p {
     z-index: 1000; /* Ensure it stays above other content */
 }
 
-.inst-button:hover {
+.instagram-button:hover {
     transform: scale(1.1);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
