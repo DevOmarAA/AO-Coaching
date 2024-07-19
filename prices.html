@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الأسعار والعروض - AO Coaching</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Additional styles for RTL support */
+        body {
+            direction: rtl;
+            text-align: right;
+        }
+
+        nav ul {
+            flex-direction: row-reverse; /* Reverses the order of navigation links */
+        }
+
+        nav ul li {
+            margin-left: 15px; /* Adjust margin for RTL */
+            margin-right: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>AO Coaching</h1>
+            <nav>
+                <ul>
+                    <li><a href="themainwebsite.html">الرئيسية</a></li> <!-- Link back to your main page -->
+                    <li><a href="#prices-offers">الأسعار والعروض</a></li> <!-- Active link -->
+                    <li><a href="#contact">اتصل بنا</a></li> <!-- Example link to a contact section -->
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section id="prices-offers" class="info-section">
+            <div class="container">
+                <h2>الأسعار والعروض</h2>
+                <div class="price-table">
+                    <div class="price-item">
+                        <h3>التدريب الشخصي</h3>
+                        <p>جلسات تدريب فردية مخصصة لأهدافك.</p>
+                        <p>السعر: $X لكل جلسة</p>
+                    </div>
+                    <section id="one-month">
+                        <div class="price-item">
+                            <h2><strong>شهر واحد</strong></h2>
+                            <p>سعر شهر واحد<br><strong style="color:rgb(201, 201, 83)">300 جنيه</strong></p>
+                        </div>
+                    </section>
+                    <section id="two-month">
+                        <div class="price-item">
+                            <h2><strong>شهرين</strong></h2>
+                            <p>سعر شهرين<br><strong style="color:rgb(201, 201, 83)">500 جنيه</strong></p>
+                        </div>
+                    </section>
+                    <section id="three-months">
+                        <div class="price-item">
+                            <h2><strong>ثلاثة أشهر</strong></h2>
+                            <p>سعر ثلاثة أشهر<br><strong style="color:rgb(201, 201, 83)">700 جنيه</strong></p>
+                        </div>
+                    </section>
+                    <section id="year">
+                        <div class="price-item">
+                            <h2><strong>سنة</strong></h2>
+                            <p>سعر السنة<br><strong style="color:rgb(201, 201, 83)">3000 جنيه</strong></p>
+                        </div>
+                    </section>
+                    <section id="our-offers">
+                        <div class="price-item">
+                            <h2><strong>عروضنا</strong></h2>
+                            <p>أول 25 اشتراك سيحصلون على شهر مجاني
+                            <br>
+                            الاشتراكات الأخرى الـ 25 ستنال خصم 50% على أي عدد من الأشهر
+                            </p>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 AO Coaching. جميع الحقوق محفوظة.</p>
+        </div>
+    </footer>
+    <button class="whatsapp-button" onclick="window.open('https://wa.me/yourwhatsappnumber', '_blank')">تحدث معنا</button>
+    <script src="script.js"></script>
+</body>
+</html>

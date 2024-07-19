@@ -1,0 +1,232 @@
+/* Reset and general styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f4f4f4;
+    color: #333;
+}
+
+/* Container styles */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+    box-sizing: border-box; /* Ensures padding doesn't affect width */
+}
+
+/* Header styles */
+header {
+    position: fixed; /* Fixes the header at the top */
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #00a8ff;
+    color: #fff;
+    padding: 20px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Center align text */
+    z-index: 1000; /* Ensures the header stays above other content */
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2em;
+    text-align: center; /* Center align the header text */
+}
+
+/* Navigation styles */
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 15px;
+    justify-content: center; /* Center align navigation items */
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1em;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #ffcc00;
+}
+
+/* Language button styles */
+header button {
+    background: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    margin: 5px;
+    transition: background 0.3s;
+}
+
+header button:hover {
+    background: #555;
+}
+
+/* Hero section styles */
+.hero-section {
+    background: url('images/hero-bg.jpg') no-repeat center center/cover;
+    color: blue;
+    padding: 100px 0;
+    text-align: center;
+}
+
+.hero-section h2 {
+    font-size: 3em;
+}
+
+.hero-section p {
+    font-size: 1.7em;
+}
+
+/* Info section styles */
+.info-section {
+    background: #fff;
+    padding: 50px 0; /* Adjust padding as needed */
+    text-align: center;
+}
+
+.info-section h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.info-section p, .info-section ul {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.info-section ul {
+    list-style: disc inside;
+}
+
+/* Service grid styles */
+.service-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center; /* Center align service boxes */
+}
+
+.service-box {
+    flex: 1 1 calc(33.33% - 15px); /* Adjust width as needed */
+    background: #f9f9f9;
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-sizing: border-box; /* Ensures padding doesn't affect width */
+}
+
+.service-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.service-box img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Footer styles */
+footer {
+    background: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* WhatsApp button styles */
+.whatsapp-button {
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    background: #25d366;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    padding: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+    z-index: 1000; /* Ensure it stays above other content */
+}
+
+.whatsapp-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Calculator section styles */
+.calculator-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center; /* Center align calculator boxes */
+}
+
+.calculator-box {
+    flex: 1 1 calc(50% - 15px); /* Adjust width as needed */
+    min-width: 200px;
+    background: #f9f9f9;
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-sizing: border-box; /* Ensures padding doesn't affect width */
+    z-index: 500; /* Ensure it stays below the header */
+}
+
+.calculator-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.calculator-box img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Main content adjustment */
+main {
+    margin-top: 80px; /* Adjust based on the height of your fixed header */
+    padding: 20px;
+    box-sizing: border-box; /* Ensures padding doesn't affect width */
+}
+
+/* Media queries for responsive adjustments */
+@media (max-width: 768px) {
+    .service-box {
+        flex: 1 1 calc(50% - 15px); /* Adjust width for smaller screens */
+    }
+    
+    .calculator-box {
+        flex: 1 1 100%; /* Full width on smaller screens */
+        margin-bottom: 15px; /* Add space between calculator boxes */
+    }
+}
+
+@media (max-width: 480px) {
+    .calculator-box {
+        padding: 10px; /* Adjust padding for smaller screens */
+    }
+}

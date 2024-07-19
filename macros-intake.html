@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Macro Calculator</title>
+    <link rel="stylesheet" href="macros-intake.css">
+    <style>
+        .language-buttons {
+            margin-bottom: 20px;
+        }
+        .language-buttons button {
+            margin-right: 10px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="language-buttons">
+            <button onclick="switchLanguage('en')">English</button>
+            <button onclick="switchLanguage('ar')">عربي</button>
+        </div>
+        
+        <h1 id="header">Macro Calculator</h1>
+        <form id="macroForm">
+            <label for="weight" id="weightLabel">Weight (kg):</label>
+            <input type="number" id="weight" name="weight" required>
+            
+            <label for="height" id="heightLabel">Height (cm):</label>
+            <input type="number" id="height" name="height" required>
+            
+            <label for="age" id="ageLabel">Age:</label>
+            <input type="number" id="age" name="age" required>
+            
+            <label for="sex" id="sexLabel">Sex:</label>
+            <select id="sex" name="sex" required>
+                <option value="male" id="maleOption">Male</option>
+                <option value="female" id="femaleOption">Female</option>
+            </select>
+            
+            <label for="activityLevel" id="activityLevelLabel">Activity Level:</label>
+            <select id="activityLevel" name="activityLevel" required>
+                <option value="sedentary" id="sedentaryOption">Sedentary (little to no exercise)</option>
+                <option value="lightlyActive" id="lightlyActiveOption">Lightly active (light exercise/sports 1-3 days/week)</option>
+                <option value="moderatelyActive" id="moderatelyActiveOption">Moderately active (moderate exercise/sports 3-5 days/week)</option>
+                <option value="veryActive" id="veryActiveOption">Very active (hard exercise/sports 6-7 days a week)</option>
+                <option value="extraActive" id="extraActiveOption">Extra active (very hard exercise/sports & physical job)</option>
+            </select>
+            
+            <label for="goal" id="goalLabel">Goal:</label>
+            <select id="goal" name="goal" required>
+                <option value="loseWeight" id="loseWeightOption">Lose Weight</option>
+                <option value="maintainWeight" id="maintainWeightOption">Maintain Weight</option>
+                <option value="gainMuscle" id="gainMuscleOption">Gain Muscle</option>
+            </select>
+            
+            <button type="button" onclick="calculateMacros()">Calculate</button>
+        </form>
+        
+        <div id="results"></div>
+    </div>
+
+    <script src="macros-intake.js"></script>
+    <script>
+        const translations = {
+            en: {
+                header: 'Macro Calculator',
+                weightLabel: 'Weight (kg):',
+                heightLabel: 'Height (cm):',
+                ageLabel: 'Age:',
+                sexLabel: 'Sex:',
+                maleOption: 'Male',
+                femaleOption: 'Female',
+                activityLevelLabel: 'Activity Level:',
+                sedentaryOption: 'Sedentary (little to no exercise)',
+                lightlyActiveOption: 'Lightly active (light exercise/sports 1-3 days/week)',
+                moderatelyActiveOption: 'Moderately active (moderate exercise/sports 3-5 days/week)',
+                veryActiveOption: 'Very active (hard exercise/sports 6-7 days a week)',
+                extraActiveOption: 'Extra active (very hard exercise/sports & physical job)',
+                goalLabel: 'Goal:',
+                loseWeightOption: 'Lose Weight',
+                maintainWeightOption: 'Maintain Weight',
+                gainMuscleOption: 'Gain Muscle',
+            },
+            ar: {
+                header: 'حاسبة الماكرو',
+                weightLabel: 'الوزن (كجم):',
+                heightLabel: 'الطول (سم):',
+                ageLabel: 'العمر:',
+                sexLabel: 'الجنس:',
+                maleOption: 'ذكر',
+                femaleOption: 'أنثى',
+                activityLevelLabel: 'مستوى النشاط:',
+                sedentaryOption: 'خامل (قليل إلى عدم ممارسة الرياضة)',
+                lightlyActiveOption: 'نشط قليلاً (تمرين/رياضة خفيفة 1-3 أيام في الأسبوع)',
+                moderatelyActiveOption: 'نشط بشكل معتدل (تمرين/رياضة معتدلة 3-5 أيام في الأسبوع)',
+                veryActiveOption: 'نشط جداً (تمرين/رياضة شاقة 6-7 أيام في الأسبوع)',
+                extraActiveOption: 'نشط بشكل إضافي (تمرين/رياضة شاقة & عمل بدني)',
+                goalLabel: 'الهدف:',
+                loseWeightOption: 'فقدان الوزن',
+                maintainWeightOption: 'الحفاظ على الوزن',
+                gainMuscleOption: 'زيادة العضلات',
+            }
+        };
+
+        function switchLanguage(language) {
+            document.getElementById('header').textContent = translations[language].header;
+            document.getElementById('weightLabel').textContent = translations[language].weightLabel;
+            document.getElementById('heightLabel').textContent = translations[language].heightLabel;
+            document.getElementById('ageLabel').textContent = translations[language].ageLabel;
+            document.getElementById('sexLabel').textContent = translations[language].sexLabel;
+            document.getElementById('maleOption').textContent = translations[language].maleOption;
+            document.getElementById('femaleOption').textContent = translations[language].femaleOption;
+            document.getElementById('activityLevelLabel').textContent = translations[language].activityLevelLabel;
+            document.getElementById('sedentaryOption').textContent = translations[language].sedentaryOption;
+            document.getElementById('lightlyActiveOption').textContent = translations[language].lightlyActiveOption;
+            document.getElementById('moderatelyActiveOption').textContent = translations[language].moderatelyActiveOption;
+            document.getElementById('veryActiveOption').textContent = translations[language].veryActiveOption;
+            document.getElementById('extraActiveOption').textContent = translations[language].extraActiveOption;
+            document.getElementById('goalLabel').textContent = translations[language].goalLabel;
+            document.getElementById('loseWeightOption').textContent = translations[language].loseWeightOption;
+            document.getElementById('maintainWeightOption').textContent = translations[language].maintainWeightOption;
+            document.getElementById('gainMuscleOption').textContent = translations[language].gainMuscleOption;
+        }
+    </script>
+</body>
+</html>

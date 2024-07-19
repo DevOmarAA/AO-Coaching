@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>حاسبة استهلاك الماء اليومي</title>
+    <link rel="stylesheet" href="water-intake.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            direction: rtl; /* Right-to-left direction */
+            text-align: right; /* Align text to the right */
+        }
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="number"], select {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>حاسبة استهلاك الماء اليومي</h2>
+        <form id="water-intake-form">
+            <div class="form-group">
+                <label for="weight">الوزن (كجم):</label>
+                <input type="number" id="weight" required>
+            </div>
+            <div class="form-group">
+                <label for="exercise">مدة التمرين (دقائق):</label>
+                <input type="number" id="exercise" required>
+            </div>
+            <div class="form-group">
+                <label for="climate">المناخ:</label>
+                <select id="climate" required>
+                    <option value="very-cold">شديد البرودة (أقل من الصفر)</option>
+                    <option value="cold">بارد (10°C - 20°C)</option>
+                    <option value="moderate">معتدل (20°C - 30°C)</option>
+                    <option value="hot">حار (أكثر من 30°C)</option>
+                    <option value="very-hot">حار جداً (أكثر من 40°C)</option>
+                </select>
+            </div>
+            <button type="button" onclick="calculateWaterIntake()">احسب</button>
+        </form>
+        <h2>استهلاكك اليومي من الماء: <span id="result">0</span> لتر</h2>
+    </div>
+
+    <script>
+        function calculateWaterIntake() {
+            const weight = parseFloat(document.getElementById('weight').value);
+            const exercise = parseFloat(document.getElementById('exercise').value);
+            const climate = document.getElementById('climate').value;
+
+            const basicIntake = weight * 0.033;
+            const exerciseAdjustment = (exercise / 30) * 0.35;
+            let climateAdjustment = 0;
+
+            switch (climate) {
+                case 'very-cold':
+                    climateAdjustment = -0.5;
+                    break;
+                case 'cold':
+                    climateAdjustment = -0.25;
+                    break;
+                case 'moderate':
+                    climateAdjustment = 0;
+                    break;
+                case 'hot':
+                    climateAdjustment = 0.5;
+                    break;
+                case 'very-hot':
+                    climateAdjustment = 1;
+                    break;
+                default:
+                    climateAdjustment = 0;
+                    break;
+            }
+
+            const totalIntake = basicIntake + exerciseAdjustment + climateAdjustment;
+            document.getElementById('result').innerText = totalIntake.toFixed(2);
+        }
+    </script>
+</body>
+</html>
