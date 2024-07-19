@@ -6,43 +6,6 @@
     <title>Ao Coaching</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
-    <style>
-        /* Style for the modal dialog */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgb(0,0,0);
-            background-color: rgba(0,0,0,0.4);
-        }
-
-        .modal-content {
-            background-color: #fefefe;
-            margin: 15% auto;
-            padding: 20px;
-            border: 1px solid #888;
-            width: 80%;
-        }
-
-        .close {
-            color: #aaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-        }
-
-        .close:hover,
-        .close:focus {
-            color: black;
-            text-decoration: none;
-            cursor: pointer;
-        }
-    </style>
 </head>
 <body>
     <header>
@@ -63,55 +26,97 @@
         </div>
     </header>
     <main>
-        <!-- Other sections of the page -->
+        <section id="home" class="hero-section">
+            <div class="container">
+                <h2 data-en="Welcome to Ao Coaching" data-ar="مرحبًا بكم في Ao Coaching">Welcome to Ao Coaching</h2>
+                <p data-en="Achieve your fitness goals with science-based workouts and personalized diet plans." data-ar="حقق أهداف لياقتك مع تمارين تستند إلى العلم وخطط غذائية مخصصة.">Achieve your fitness goals with science-based workouts and personalized diet plans.</p>
+                <p data-en="Improve your lifestyle and make it healthier with our expert guidance." data-ar="حسن نمط حياتك واجعله أكثر صحة مع توجيهات خبرائنا.">Improve your lifestyle and make it healthier with our expert guidance.</p>
+            </div>
+        </section>
+        <section id="workouts" class="info-section">
+            <div class="container">
+                <h2 data-en="Workouts" data-ar="التمارين">Workouts</h2>
+                <p data-en="Our workouts are tailored to your abilities and preferences:" data-ar="تماريننا مخصصة لقدراتك وتفضيلاتك:">Our workouts are tailored to your abilities and preferences:</p>
+                <ul>
+                    <li data-en="Calisthenics at home with your equipment" data-ar="تمارين الجمباز في المنزل باستخدام معداتك الخاصة">Calisthenics at home with your equipment</li>
+                    <li data-en="Bodybuilding at the gym with gym equipment" data-ar="تمارين كمال الأجسام في الجيم باستخدام معدات الجيم">Bodybuilding at the gym with gym equipment</li>
+                    <li data-en="Powerlifting at the gym with gym equipment" data-ar="رفع الأثقال في الجيم باستخدام معدات الجيم">Powerlifting at the gym with gym equipment</li>
+                </ul>
+            </div>
+        </section>
+        <section id="progress" class="info-section">
+            <div class="container">
+                <h2 data-en="Progress tracking" data-ar="تتبع التقدم">Progress</h2>
+                <p data-en="Track your progress daily via WhatsApp or update your status through our app." data-ar="تتبع تقدمك يوميًا عبر WhatsApp أو قم بتحديث حالتك من خلال تطبيقنا.">Track your progress daily via WhatsApp or update your status through our app.</p>
+            </div>
+        </section>
+        <section id="goals" class="info-section">
+            <div class="container">
+                <h2 data-en="Goals" data-ar="الأهداف">Goals</h2>
+                <p data-en="We can help you achieve:" data-ar="يمكننا مساعدتك في تحقيق:">We can help you achieve:</p>
+                <ul>
+                    <li data-en="Overall fitness and health" data-ar="اللياقة والصحة العامة">Overall fitness and health</li>
+                    <li data-en="Competitive preparation for calisthenics, bodybuilding, and powerlifting" data-ar="التحضير للمنافسات في الجمباز وكمال الأجسام ورفع الأثقال">Competitive preparation for calisthenics, bodybuilding, and powerlifting</li>
+                </ul>
+            </div>
+        </section>
+        <section id="diet" class="info-section">
+            <div class="container">
+                <h2 data-en="Diet" data-ar="النظام الغذائي">Diet</h2>
+                <p data-en="Personalized diet plans to match your goals:" data-ar="خطط غذائية مخصصة لتناسب أهدافك:">Personalized diet plans to match your goals:</p>
+                <ul>
+                    <li data-en="Bulking to gain muscle with minimal fat" data-ar="زيادة الوزن لاكتساب العضلات مع الحد الأدنى من الدهون">Bulking to gain muscle with minimal fat</li>
+                    <li data-en="Cutting to get lean and shredded" data-ar="التخسيس للحصول على جسم نحيف ومنحوت">Cutting to get lean and shredded</li>
+                    <li data-en="Maintaining calories to stay lean and gain muscle" data-ar="الحفاظ على السعرات الحرارية للبقاء نحيفًا واكتساب العضلات">Maintaining calories to stay lean and gain muscle</li>
+                </ul>
+            </div>
+        </section>
+        <section id="our-services" class="info-section">
+            <div class="container">
+                <h2 data-en="Our Services" data-ar="خدماتنا">Our Services</h2>
+                <div class="service-grid">
+                    <div class="service-box">
+                        <a href="caloriecalculator.html">
+                            <img src="caloriecalculator.png" alt="Calorie Calculator">
+                        </a>
+                        <h3 data-en="Calorie Calculator" data-ar="حاسبة السعرات الحرارية">Calorie Calculator</h3>
+                        <p data-en="Get a personalized calorie recommendation based on your goals and body." data-ar="احصل على توصية سعرات حرارية مخصصة بناءً على أهدافك وجسمك.">Get a personalized calorie recommendation based on your goals and body.</p>
+                    </div>
+                </div>
+            </div>
+                <div class="calculator-section">
+                    <div class="calculator-box">
+                        <a href="prices.html">
+                            <img src="dollar.png" alt="prices and offers">
+                        </a>
+                        <h3 data-en="prices" data-ar="الأسعار">prices</h3>
+                        <p data-en="to know our prices and offers for subs" data-ar="لمعرفة أسعارنا وعروض الاشتراكات">to know our prices and offers for subs</p>
+                    </div>
+                    <div class="calculator-box">
+                        <a href="macros-intake.html">
+                            <img src="protein.png" alt="Macros Calculator" width="200" height="100">
+                        </a>
+                        <h3 data-en="Macros Calculator" data-ar="حاسبة المغذيات الكبيرة">Macros Calculator</h3>
+                        <p data-en="Determine the optimal macronutrient intake for your goals." data-ar="تحديد كمية المغذيات الكبيرة المثلى لأهدافك.">Determine the optimal macronutrient intake for your goals.</p>
+                    </div>
+                    <div class="calculator-box">
+                        <a href="water-intake.html">
+                            <img src="water.png" alt="Water Intake Calculator" width="300" height="200">
+                        </a>
+                        <h3 data-en="Water Intake Calculator" data-ar="حاسبة شرب الماء">Water Intake Calculator</h3>
+                        <p data-en="Find out how much water you should drink daily." data-ar="اكتشف كمية الماء التي يجب أن تشربها يوميًا.">Find out how much water you should drink daily.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
     <footer>
         <div class="container">
             <p>&copy; 2024 Ao Coaching. All rights reserved.</p>
         </div>
     </footer>
-    <button class="whatsapp-button" onclick="openModal()">Chat</button>
-
-    <!-- Modal Dialog -->
-    <div id="myModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal()">&times;</span>
-            <h2>Create a New WhatsApp Group</h2>
-            <p>Follow these steps to create a new WhatsApp group with our coaches:</p>
-            <ol>
-                <li>Open WhatsApp on your phone.</li>
-                <li>Go to the Chats tab and tap <strong>New Group</strong>.</li>
-                <li>Add the following numbers to the group:</li>
-                <ul>
-                    <li>Coach Omar: +1234567890</li>
-                    <li>Coach Ahmed: +0987654321</li>
-                </ul>
-                <li>Tap <strong>Next</strong> and enter a group subject.</li>
-                <li>Tap <strong>Create</strong>.</li>
-            </ol>
-            <p>Copy and paste this message into the group:</p>
-            <textarea rows="4" cols="50">Hi Omar and Ahmed, I have created this group to get guidance on my fitness goals.</textarea>
-        </div>
-    </div>
-
+    <button class="instagram-button" onclick="window.open('https://www.instagram.com/ao_coaching120/', '_blank')">Chat</button>
     <script>
-        // Modal dialog functions
-        function openModal() {
-            document.getElementById('myModal').style.display = "block";
-        }
-
-        function closeModal() {
-            document.getElementById('myModal').style.display = "none";
-        }
-
-        // Close the modal when the user clicks anywhere outside of it
-        window.onclick = function(event) {
-            const modal = document.getElementById('myModal');
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        }
-
         document.querySelectorAll('nav ul li a').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
